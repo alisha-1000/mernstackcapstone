@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../context/AuthContext";
 import "../styles/global.css";
+import API from "../services/api";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -13,6 +14,7 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const { login } = useContext(AuthContext);
+
 
   // Email validation
   const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -31,7 +33,8 @@ const Login = () => {
 
     try {
       const payload = { email: email.trim().toLowerCase(), password };
-      const res = await axios.post("http://localhost:4000/api/auth/login", payload);
+      // const res = await axios.post("http://localhost:4000/api/auth/login", payload);
+      const res = await API.post("/auth/login", payload);
 
       if (res.data.token) {
         login(res.data.token); // save token in context

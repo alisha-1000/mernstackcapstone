@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../context/AuthContext";
 import "../styles/global.css";
+import API from "../services/api";
 
 const Register = () => {
   const [form, setForm] = useState({ name: "", email: "", password: "" });
@@ -39,10 +40,7 @@ const Register = () => {
         password: form.password,
       };
 
-      const res = await axios.post(
-        "http://localhost:4000/api/auth/register",
-        payload
-      );
+      const res = await API.post("/auth/register", payload);
 
       if (res.data.token) {
         login(res.data.token); // Auto-login
