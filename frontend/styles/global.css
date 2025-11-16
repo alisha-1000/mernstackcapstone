@@ -1,0 +1,211 @@
+/* ==================== GLOBAL RESET & FONT ==================== */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #6a0dad, #9b59b6);
+  color: #333;
+  min-height: 100vh;
+  font-size: 16px;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ==================== CARDS ==================== */
+.center-box, .auth-card {
+  background: #fff;
+  padding: 40px 50px;
+  border-radius: 20px;
+  box-shadow: 0px 20px 60px rgba(0,0,0,0.2);
+  max-width: 450px;
+  width: 100%;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.center-box:hover, .auth-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 70px rgba(0,0,0,0.25);
+}
+
+/* ==================== TITLES ==================== */
+.auth-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #6a0dad;
+}
+.auth-subtitle {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* ==================== INPUT BOXES ==================== */
+.input-box {
+  position: relative;
+  margin: 20px 0;
+}
+.input-box input {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 2px solid #d8c7ff;
+  outline: none;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  background: none;
+}
+.input-box input:focus {
+  border-color: #6a0dad;
+  box-shadow: 0 0 10px rgba(106, 13, 173, 0.2);
+}
+.input-box label {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  padding: 0 5px;
+  color: #999;
+  font-size: 14px;
+  pointer-events: none;
+  transition: 0.3s;
+}
+.input-box input:focus + label,
+.input-box input:not(:placeholder-shown) + label {
+  top: -10px;
+  font-size: 12px;
+  color: #6a0dad;
+}
+.input-box i {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6a0dad;
+}
+
+/* ==================== BUTTON ==================== */
+button, .btn-primary {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 12px;
+  border: none;
+  background: #6a0dad;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+button:hover, .btn-primary:hover {
+  background: #580b91;
+  transform: scale(1.02);
+}
+
+/* ==================== MESSAGES ==================== */
+.error {
+  color: red;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.success {
+  color: green;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+/* ==================== FOOTER ==================== */
+.auth-footer {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+}
+.auth-footer a {
+  color: #6a0dad;
+  font-weight: 500;
+  text-decoration: none;
+}
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ==================== ANIMATIONS ==================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dashboard-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #6a0dad, #9b59b6);
+}
+/* ==================== INPUT BOX ==================== */
+.input-box {
+  position: relative;
+  margin: 20px 0;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 14px 45px 14px 14px; /* leave space for icon */
+  border: 2px solid #d8c7ff;
+  border-radius: 10px;
+  outline: none;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.input-box input:focus {
+  border-color: #6a0dad;
+  box-shadow: 0 0 10px rgba(106, 13, 173, 0.2);
+}
+
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: #999;
+  pointer-events: none;
+  transition: 0.3s ease all;
+}
+
+.input-box input:focus + label,
+.input-box input:not(:placeholder-shown) + label {
+  top: -8px;
+  left: 12px;
+  font-size: 12px;
+  background: #fff;
+  padding: 0 5px;
+  color: #6a0dad;
+}
+
+/* ==================== ICONS ==================== */
+.input-box i {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #6a0dad;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.input-box i:hover {
+  color: #580b91;
+}
